@@ -17,7 +17,7 @@ jobs:
           unzip -q Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip
           mv Godot_v${GODOT_VERSION}-stable_linux.x86_64 godot
           chmod +x godot
-      - name: Import project
+      - name: Import project (fonts, translations, class cache)
         run: ./godot --headless --import --path . || true
       - name: Run GUT tests
         run: ./godot --headless --path . -s addons/gut/gut_cmdln.gd
